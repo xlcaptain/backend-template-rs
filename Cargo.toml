@@ -1,6 +1,28 @@
 [package]
 name = "backend-template-rs"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+homepage.workspace = true
+
+
+[workspace]
+members = ["api", "core", "service"]
+
+
+[workspace.package]
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
+authors = ["Felix Xu"]
+homepage = "https://github.com/backend-template-rs"
+
+[workspace.dependencies]
+serde = { version = "1.0", features = ["serde_derive"] }
+tokio = { version = "1.48", features = ["full"] }
+
+# HTTP dependencies
+axum = { version = "0.7.4", features = ["json"] }
+
 
 [dependencies]
+api = {path = "api"}
